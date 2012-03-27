@@ -26,7 +26,6 @@ group :development do
 end
 
 group :test do
-  gem 'rspec-rails', '2.8.1'
   gem 'capybara', '1.1.2'
   if (ENV['OS'] =~ /win/i)
     gem 'rb-fchange', '0.0.5'
