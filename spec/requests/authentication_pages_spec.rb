@@ -1,4 +1,5 @@
 require 'spec_helper'
+require 'support/utilities'
 
 describe "Authentication" do
 
@@ -30,10 +31,10 @@ describe "Authentication" do
     describe "with valid information" do
       let(:user) { FactoryGirl.create(:user) }
       before do
-        fill_in "Email",     with: user.email
-        fill_in "Password",  with: user.password
+        fill_in "Email",    with: user.email
+        fill_in "Password", with: user.password
         click_button "Sign in"
-      end
+      end 
 
       it { should have_selector('title', text: user.name) }
       it { should have_link('Profile', href: user_path(user)) }
